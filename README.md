@@ -2,7 +2,15 @@
 
 진단 구조를 **MobileNetV3(분류) → LLM(채점·개선 문장)** 2단계로 바꾼 버전. 파일 구조는 v5·v6과 같음 (html / css / js 분리).
 
-바로 열기: `SketchLens_v7.html` (GitHub Pages를 켜면 `https://<아이디>.github.io/<저장소>/SketchLens_v7.html`)
+## HTML 두 가지 (같은 css · js를 함께 씀)
+| 파일 | 용도 | 탭 |
+|---|---|---|
+| `SketchLens_v7.html` | 개발용. 1단계 · 2단계 · 최종 응답 JSON 확인 | 진단 · 입력·출력 · 기록 |
+| `SketchLens_v7_user.html` | 사용자용(발표 · 시연). JSON 화면 없음 | 진단 · 기록 |
+
+GitHub Pages 주소 (저장소 이름이 `front_v7`일 때)
+- 개발용: https://lmj451.github.io/front_v7/SketchLens_v7.html
+- 사용자용: https://lmj451.github.io/front_v7/SketchLens_v7_user.html
 
 ## 진단 흐름
 1. **1단계 · MobileNetV3 (분류)**
