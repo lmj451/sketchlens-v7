@@ -77,8 +77,9 @@
   document.getElementById('tabs').addEventListener('click', function(e){
     var b=e.target.closest('button'); if(!b) return;
     this.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x===b); });
-    ['p1','p2','p3'].forEach(function(id){
-      document.getElementById(id).classList.toggle('on', id===b.dataset.p);
+    // 화면에 있는 패널만 전환 (사용자용 HTML에는 입력·출력 패널(p2)이 없음)
+    document.querySelectorAll('.pane').forEach(function(el){
+      el.classList.toggle('on', el.id===b.dataset.p);
     });
   });
 
@@ -554,6 +555,7 @@
 
   /* 입력·출력 탭: 서버로 보내는 값과 단계별 응답 JSON을 그대로 보여준다 */
   function renderIO(stage1, stage2, final){
+    if(!p2) return;   // 사용자용 HTML(입력·출력 탭 없음)에서는 그리지 않음
     var fid=focusIds().map(function(id){ return AXIS_BY_ID[id].name; });
     var h='<h4 class="io-h">입력</h4><table class="dl">'+
       '<tr><td>스케치 이미지</td><td>'+esc(fileLabel)+' ('+IW+' × '+IH+')</td></tr>'+
