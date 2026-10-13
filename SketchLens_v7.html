@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SketchLens — 의류 스케치 진단</title>
+<title>SketchLens — 의류 스케치 진단 (개발용)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- Django 연동 시: {% load static %} 후 href="{% static 'css/sketchlens.css' %}" 로 교체 -->
+<!-- 백엔드 연동 시: {% load static %} 후 href="{% static 'css/sketchlens.css' %}" 로 교체 -->
 <link rel="stylesheet" href="css/sketchlens.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
       <a href="#guide" data-view="guide">기준 가이드</a>
     </div>
     <div class="nav-right">
-      <span class="tag">프로토타입 · 로그인 없이 이용</span>
+      <span class="tag">개발용 · 입력·출력 확인</span>
     </div>
   </div>
 </nav>
@@ -114,7 +114,7 @@
     <div class="card">
       <div class="card-head">
         <h2>진단 결과</h2>
-        <!-- TODO(Django 연동 지점): 서버 연동 후 "로컬 데모 응답" 문구 삭제 또는 변경 -->
+        <!-- TODO(백엔드 연동 지점): 서버 연동 후 "로컬 데모 응답" 문구 삭제 또는 변경 -->
         <span class="meta">로컬 데모 응답</span>
       </div>
       <div class="tabs" id="tabs">
@@ -202,7 +202,7 @@
   </div>
 </div>
 
-<!-- TODO(Django 연동 지점): 아래 프로토타입 안내는 데모용 설명. 서버 연동 후 삭제하거나 실제 서비스 안내로 교체 -->
+<!-- TODO(백엔드 연동 지점): 아래 프로토타입 안내는 데모용 설명. 서버 연동 후 삭제하거나 실제 서비스 안내로 교체 -->
 <div class="foot">
   <p><b>프로토타입 안내.</b>
   실제 서비스에서는 두 단계로 진단합니다. 1단계에서 학습된 MobileNetV3가 패션 스케치 여부와 의류 카테고리를 분류하고, 2단계에서 LLM이 채점 기준표에 따라 세부 기준을 채점하며 개선 방향 문장을 작성합니다. 항목 점수는 서버가 계산합니다.
@@ -210,7 +210,7 @@
   점수 숫자보다 <b>화면 흐름과 입력·출력 형식</b>을 확인하는 용도입니다.</p>
 </div>
 
-<!-- Django 연동 시: src="{% static 'js/sketchlens.js' %}" 로 교체 -->
+<!-- 백엔드 연동 시: src="{% static 'js/sketchlens.js' %}" 로 교체 -->
 <script src="js/sketchlens.js"></script>
 </body>
 </html>
